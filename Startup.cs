@@ -38,7 +38,7 @@ namespace postgres_service
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
