@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace postgres_service.Controllers
 {
@@ -10,14 +11,17 @@ namespace postgres_service.Controllers
     public class ValuesController : Controller
     {
         private readonly Repository _repo;
-        public ValuesController(Repository repository)
+        private readonly ILogger _logger;
+        public ValuesController(Repository repository, ILogger<ValuesController> logger)
         {
             _repo = repository;
+            _logger = logger;
         }
         // GET api/values
         [HttpGet]
         public IEnumerable<Person> Get()
         {
+            _logger.LogInformation("Hello");
             return _repo.Personer;
         }
 

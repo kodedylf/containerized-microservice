@@ -4,6 +4,7 @@ services:
     image: "hans"
     depends_on:
       - database
+      - elasticsearch
     ports:
       - "80:80"
   database:
@@ -14,6 +15,20 @@ services:
       - POSTGRES_PASSWORD=omega32
     volumes:
       - dbdatavol:/var/lib/postgresql/data
+  elasticsearch:
+    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.0"
+    volumes:
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+  kibana:
+    image: "docker.elastic.co/kibana/kibana-oss:6.1.0"
+    volumes:
+      - ./kibana/:/usr/share/kibana/config:ro
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
 #  pgadmin:
 #    image: "dpage/pgadmin4"
 #    depends_on:
