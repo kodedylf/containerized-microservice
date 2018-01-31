@@ -1,7 +1,8 @@
 version: '3'
 services:
   service:
-    image: "hans"
+    build:
+      context: ./
     depends_on:
       - database
       - elasticsearch
