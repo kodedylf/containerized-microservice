@@ -2,7 +2,7 @@
 Playground for experimenting with containerization of a microservice
 
 ## Overview
-The project is for my experiments with Docker and other new(ish) technology. As of this writing, it's a service written in ASP.NET Core 2.0 with Serilog and Entity Framework. The database is PostgreSQL and the logs are saved in an Elasticsearch database. Kibana is used to browse the log.
+The project is for my experiments with Docker and other new(ish) technology. As of this writing, it's a service written in ASP.NET Core 2.0 with Serilog and Entity Framework. The database is PostgreSQL and the logs are saved in an Elasticsearch database. Kibana is used to browse the log. Nginx is used as a reverse proxy to map both the service and Kibana to port 80.
 
 This is bound to change as I play around with it and, knowing me, I might not get around to updating the readme file.
 
@@ -23,4 +23,4 @@ Quite a lot happens when docker-compose brings up the service, including
 - running a container that builds the ASP.NET service. This is done inside a Microsoft made container that has the .NET Core SDK installed. Since it's done inside a container, the host machine doesn't need to have the SDK installed.
 - creating a database. The service uses Entity Framework to create the tables it needs inside this database when it starts.
 
-When the service has been built and is running, you can access the service on port 80 and Kibana on port 5601.
+When the service has been built and is running, you can access the service on port 80 and Kibana on /log.
