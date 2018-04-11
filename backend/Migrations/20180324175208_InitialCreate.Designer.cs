@@ -10,7 +10,7 @@ using System;
 namespace postgresservice.Migrations
 {
     [DbContext(typeof(Repository))]
-    [Migration("20180125222931_InitialCreate")]
+    [Migration("20180324175208_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
