@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -d && cp -R static_files/* dist/"
+    "build": "webpack -p && cp -R static_files/* dist/"
   },
   "keywords": [],
   "author": "",
