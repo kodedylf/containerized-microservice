@@ -15,7 +15,7 @@ class Personlist extends React.Component {
   }
 
   UserList() {
-    fetch(`http://localhost/api/values`)
+    fetch(`/api/values`)
       .then(result=>result.json())
       .then(items=>this.setState({ person: items }))
   }
@@ -50,7 +50,7 @@ class InputForm extends React.Component {
 
   handleSubmit(event) {
     var data = { 'navn': this.state.value };
-    fetch(`http://localhost/api/values`, 
+    fetch(`/api/values`, 
     { method: 'POST',
       body: JSON.stringify(data),
       headers: new Headers({'Content-Type': 'application/json'})
