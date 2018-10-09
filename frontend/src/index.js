@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Bootstrap from 'bootstrap';
 import BootstrapCSS from 'bootstrap/dist/css/bootstrap.min.css';
+import GoogleLogin from 'react-google-login';
 
 class Personlist extends React.Component {
   constructor(props) {
@@ -74,6 +75,10 @@ class InputForm extends React.Component {
 }
 
 class Navbar extends React.Component {
+  responseGoogle(response) { 
+    console.log(response)
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -94,6 +99,14 @@ class Navbar extends React.Component {
               <a className="nav-link" href="/log">Log</a>
             </li>
           </ul>
+        </div>
+        <div>
+          <GoogleLogin clientId={'64009032792-v52a59o577qlodstojdfjvfu1htt90sm.apps.googleusercontent.com'}
+                       style={{}}
+                       className={'btn btn-outline-light'}
+                       buttonText={'Login'}
+                       onSuccess={this.responseGoogle}
+                       onFailure={this.responseGoogle} />
         </div>
       </nav>
     );

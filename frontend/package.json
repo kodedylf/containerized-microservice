@@ -21,10 +21,11 @@
     "webpack-cli": "^2.0.10"
   },
   "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "bootstrap": "^4.1.0",
-    "popper.js": "^1.12.4",
-    "jquery": "^3.3.1"
+    "react-google-login": "^3.2.1"
   }
 }
