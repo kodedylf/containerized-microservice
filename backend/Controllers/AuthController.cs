@@ -8,7 +8,7 @@ using Google.Apis.Auth;
 
 namespace postgres_service.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     public class AuthController : Controller
     {
         private readonly ILogger _logger;
@@ -17,7 +17,7 @@ namespace postgres_service.Controllers
             _logger = logger;
         }
         
-        [Route("api/[controller]/google/{token}")]
+        [Route("google/{token}")]
         [HttpGet]
         public async Task<string> LoginWithGoogleToken(string token)
         {

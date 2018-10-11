@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace postgres_service.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/values")]
     public class ValuesController : Controller
     {
         private readonly Repository _repo;
